@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
     });
   } catch (error: any) {
     await supabase.from("query_logs").insert({
-      query_hash,queryHash
+      query_hash: queryHash,
       source_code: "UN_COMTRADE",
       request_params: body,
       response_status: "failed",
